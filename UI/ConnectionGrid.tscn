@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://df5oquuwdyapj"]
+
+[ext_resource type="Script" path="res://UI/ConnectionGrid.gd" id="1_matcl"]
+
+[node name="ConnectionGrid" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_matcl")
+
+[node name="Response" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Container" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -89.5
+offset_right = 199.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="NameLabel" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Name:"
+
+[node name="NameBox" type="TextEdit" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+placeholder_text = "Name"
+
+[node name="IPLabel" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "IP:"
+
+[node name="IPBox" type="TextEdit" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[node name="PortLabel" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Port:"
+
+[node name="PortBox" type="TextEdit" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "25565"
+placeholder_text = "Port"
+
+[node name="Back" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Back"
+
+[node name="Connect" type="Button" parent="Container"]
+layout_mode = 2
+text = "Connect"
+
+[connection signal="pressed" from="Container/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Container/Connect" to="." method="_on_connect_pressed"]

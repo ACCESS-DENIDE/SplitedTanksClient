@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://epvn4o7gwdpi"]
+
+[ext_resource type="Texture2D" uid="uid://cd04u4uow4ags" path="res://Resourses/Textures/Tanks.png" id="2_1cfw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3hvf"]
+atlas = ExtResource("2_1cfw4")
+region = Rect2(17, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jdq6"]
+atlas = ExtResource("2_1cfw4")
+region = Rect2(81, 0, 13, 16)
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3hvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jdq6")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]

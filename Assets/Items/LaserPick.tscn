@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxbo0maots12f"]
+
+[ext_resource type="Texture2D" uid="uid://bgb40np0r0mpm" path="res://Resourses/Atlases/Items/Laser_pick.tres" id="1_ocmjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cegnp"]
+radius = 8.0
+
+[node name="Laser" type="Area2D"]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cegnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ocmjt")

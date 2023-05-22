@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bricabsc0x8sy"]
+
+[ext_resource type="Texture2D" uid="uid://5n80au1g8etd" path="res://Resourses/Atlases/Items/SuperCharge.tres" id="1_oblvd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cegnp"]
+radius = 8.0
+
+[node name="Charge" type="Area2D"]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cegnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_oblvd")

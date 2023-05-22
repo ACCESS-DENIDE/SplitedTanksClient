@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://cikid8ao4npc4"]
+
+[ext_resource type="Script" path="res://UI/InGameUI.gd" id="1_kaqow"]
+[ext_resource type="Texture2D" uid="uid://ciaul0kknlogt" path="res://Resourses/Atlases/Blocks/Brick1.tres" id="2_qqvnv"]
+[ext_resource type="Texture2D" uid="uid://delyevvrodeok" path="res://Resourses/Atlases/Blocks/Concreet.tres" id="3_4oipb"]
+[ext_resource type="Texture2D" uid="uid://cdvjeys83ol85" path="res://Resourses/Atlases/Blocks/Bush.tres" id="4_4n2ny"]
+[ext_resource type="Texture2D" uid="uid://blbprph5aslpm" path="res://Resourses/Atlases/Blocks/Water.tres" id="5_ohfah"]
+[ext_resource type="Texture2D" uid="uid://d2i6kcicakrtn" path="res://Resourses/Atlases/Blocks/Field.tres" id="6_gvaum"]
+[ext_resource type="SpriteFrames" uid="uid://bo132ndk4m3ai" path="res://Resourses/Animations/Items.tres" id="7_xdj4v"]
+
+[node name="InGameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 90.0
+offset_right = 824.0
+offset_bottom = 522.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_kaqow")
+
+[node name="MyBlocks" type="ItemList" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = -128.0
+offset_right = 167.5
+offset_bottom = 303.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+item_count = 5
+icon_scale = 5.0
+item_0/text = "Brick"
+item_0/icon = ExtResource("2_qqvnv")
+item_1/text = "Concreete"
+item_1/icon = ExtResource("3_4oipb")
+item_2/text = "Bush"
+item_2/icon = ExtResource("4_4n2ny")
+item_3/text = "Water"
+item_3/icon = ExtResource("5_ohfah")
+item_4/text = "ForceField"
+item_4/icon = ExtResource("6_gvaum")
+
+[node name="Scores" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -293.5
+offset_top = -86.5
+offset_right = -100.5
+offset_bottom = 29.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+item_count = 4
+item_0/text = "Player1"
+item_1/text = "Player2"
+item_2/text = "Player3"
+item_3/text = "Player4"
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+text = "Menu"
+
+[node name="PowerUp" type="AnimatedSprite2D" parent="."]
+position = Vector2(1706, 903)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("7_xdj4v")
+animation = &"Base"
+frame = 8
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

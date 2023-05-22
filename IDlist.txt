@@ -1,0 +1,31 @@
+0-Red Tank
+1-Green Tank
+2-Blue Tank
+3-Yellow Tank
+4-Concreete
+5-Water
+6-Field
+7-Bush
+8-Brick1
+9-Brick2
+10-Brick3
+11-Base
+12-Crate
+13-Bulet
+14-Rocket
+15-Laser
+16-Artillery
+17-Explode
+18-Shield
+19-Boost
+20-Mine
+21-Super Charge
+22-weapon bulet
+23-weapon rocket
+24-weapon laser
+25-weapon artillery
+26-Mini explode
+27-plasma ball
+28-OmenCanon
+29-Bunker Buster
+30-Mafia

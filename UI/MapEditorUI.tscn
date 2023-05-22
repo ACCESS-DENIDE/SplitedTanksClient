@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://o72qsprs6js2"]
+
+[ext_resource type="Script" path="res://UI/MapEditorUI.gd" id="1_lxiqv"]
+[ext_resource type="Texture2D" uid="uid://delyevvrodeok" path="res://Resourses/Atlases/Blocks/Concreet.tres" id="2_jpwan"]
+[ext_resource type="Texture2D" uid="uid://blbprph5aslpm" path="res://Resourses/Atlases/Blocks/Water.tres" id="3_edh20"]
+[ext_resource type="Texture2D" uid="uid://d2i6kcicakrtn" path="res://Resourses/Atlases/Blocks/Field.tres" id="4_6tiqb"]
+[ext_resource type="Texture2D" uid="uid://cdvjeys83ol85" path="res://Resourses/Atlases/Blocks/Bush.tres" id="5_2s3jp"]
+[ext_resource type="Texture2D" uid="uid://ciaul0kknlogt" path="res://Resourses/Atlases/Blocks/Brick1.tres" id="6_ql52v"]
+[ext_resource type="Texture2D" uid="uid://bd2uitq1ca5l5" path="res://Resourses/Atlases/Blocks/Brick2.tres" id="7_gkwev"]
+[ext_resource type="Texture2D" uid="uid://do2q380lyeebs" path="res://Resourses/Atlases/Blocks/Brick3.tres" id="8_o2jpg"]
+[ext_resource type="Texture2D" uid="uid://df5l6iyatviai" path="res://Resourses/Atlases/Blocks/Base.tres" id="9_2sige"]
+[ext_resource type="Texture2D" uid="uid://lbwknikep4va" path="res://Resourses/Atlases/Blocks/CursorR.tres" id="10_tpyl0"]
+
+[node name="MapEditorUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_lxiqv")
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 370.0
+offset_bottom = 665.0
+
+[node name="SaveLoader" type="GridContainer" parent="Grid"]
+custom_minimum_size = Vector2(200, 115)
+layout_mode = 2
+
+[node name="Path" type="TextEdit" parent="Grid/SaveLoader"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+placeholder_text = "Path"
+
+[node name="Load" type="Button" parent="Grid/SaveLoader"]
+layout_mode = 2
+focus_mode = 0
+text = "Load"
+
+[node name="Save" type="Button" parent="Grid/SaveLoader"]
+layout_mode = 2
+focus_mode = 0
+text = "Save"
+
+[node name="BlockSelector" type="GridContainer" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Selector" type="ItemList" parent="Grid/BlockSelector"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+item_count = 9
+icon_scale = 3.0
+item_0/text = "Concreete"
+item_0/icon = ExtResource("2_jpwan")
+item_1/text = "Water"
+item_1/icon = ExtResource("3_edh20")
+item_2/text = "Force Field"
+item_2/icon = ExtResource("4_6tiqb")
+item_3/text = "Bush"
+item_3/icon = ExtResource("5_2s3jp")
+item_4/text = "Brick 1"
+item_4/icon = ExtResource("6_ql52v")
+item_5/text = "Brick 2"
+item_5/icon = ExtResource("7_gkwev")
+item_6/text = "Brick 3"
+item_6/icon = ExtResource("8_o2jpg")
+item_7/text = "Base"
+item_7/icon = ExtResource("9_2sige")
+item_8/text = "Erase"
+item_8/icon = ExtResource("10_tpyl0")
+
+[node name="Undo" type="Button" parent="Grid/BlockSelector"]
+layout_mode = 2
+focus_mode = 0
+text = "Undo"
+
+[node name="Back" type="Button" parent="Grid/BlockSelector"]
+layout_mode = 2
+focus_mode = 0
+text = "Main Menu"
+
+[connection signal="pressed" from="Grid/SaveLoader/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Grid/SaveLoader/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Grid/BlockSelector/Undo" to="." method="_on_undo_pressed"]
+[connection signal="pressed" from="Grid/BlockSelector/Back" to="." method="_on_back_pressed"]

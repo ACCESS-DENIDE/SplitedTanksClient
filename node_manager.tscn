@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://q4vmu47f72e3"]
+
+[ext_resource type="Script" path="res://node_manager.gd" id="1_uopny"]
+
+[node name="NodeManager" type="Node"]
+script = ExtResource("1_uopny")
+
+[node name="UIlayer" type="Node" parent="."]
+
+[node name="GameplayLayer" type="Node" parent="."]

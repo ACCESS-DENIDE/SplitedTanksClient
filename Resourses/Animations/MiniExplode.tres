@@ -1,0 +1,75 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://u7awtgx20m6m"]
+
+[ext_resource type="Texture2D" uid="uid://d0ke1xediih0p" path="res://Resourses/Textures/Animatics.png" id="1_whgyi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w7ol"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weqcd"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yyd6"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f30su"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xjtm"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cieho"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kj47"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmff0"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncsfh"]
+atlas = ExtResource("1_whgyi")
+region = Rect2(128, 0, 16, 16)
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w7ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weqcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yyd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f30su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xjtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cieho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kj47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmff0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncsfh")
+}],
+"loop": false,
+"name": &"Explode",
+"speed": 15.0
+}]

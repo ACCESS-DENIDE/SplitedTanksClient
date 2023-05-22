@@ -1,0 +1,68 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dig8bcrmguaj7"]
+
+[ext_resource type="Texture2D" uid="uid://bt64gw0hphxah" path="res://Resourses/Textures/LaserBeam.png" id="1_cnvx1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcfdk"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qygo2"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qex4k"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l5xq"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m5gb"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gmjf"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v654h"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jgff"]
+atlas = ExtResource("1_cnvx1")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcfdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qygo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qex4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l5xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m5gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gmjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v654h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jgff")
+}],
+"loop": false,
+"name": &"Shoot",
+"speed": 30.0
+}]

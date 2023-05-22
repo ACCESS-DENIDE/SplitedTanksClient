@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5dbabysnwotb"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfan5rx8fukiy" path="res://Resourses/Animations/TankR_Anim.tres" id="1_dt538"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4je0"]
+size = Vector2(13.2, 16)
+
+[node name="TankR" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("1_dt538")
+animation = &"Move"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_k4je0")

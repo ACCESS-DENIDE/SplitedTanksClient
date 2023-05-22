@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dysm5xshvscsr"]
+
+[ext_resource type="Texture2D" uid="uid://dd7ds61f6fg6b" path="res://Resourses/Atlases/Items/Gun_pick.tres" id="1_g2gms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cegnp"]
+radius = 8.0
+
+[node name="Gun" type="Area2D"]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cegnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_g2gms")

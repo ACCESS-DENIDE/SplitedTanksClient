@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhrgck2ugun45"]
+
+[ext_resource type="Script" path="res://Assets/Effects/Mafia.gd" id="1_6rfcv"]
+[ext_resource type="Shader" path="res://Assets/Effects/Mafia.gdshader" id="1_a76eo"]
+[ext_resource type="VideoStream" path="res://Resourses/Video/That_s-how-mafia-works-Green-Screen.ogv" id="1_fnood"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtegp"]
+shader = ExtResource("1_a76eo")
+shader_parameter/key_color = Quaternion(0, 1, 0, 1)
+shader_parameter/similarity = 0.4
+shader_parameter/smoothness = 0.08
+shader_parameter/spill = 0.1
+
+[node name="Mafia" type="Control"]
+z_index = 30
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6rfcv")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = 30
+material = SubResource("ShaderMaterial_wtegp")
+layout_mode = 0
+offset_left = -1600.0
+offset_top = -900.0
+offset_right = -320.0
+offset_bottom = -180.0
+scale = Vector2(2.5, 2.5)
+stream = ExtResource("1_fnood")
+volume_db = -80.0
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

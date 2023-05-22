@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ciaul0kknlogt"]
+
+[ext_resource type="Texture2D" uid="uid://xg8pffjabp5p" path="res://Resourses/Textures/Blocks.png" id="1_j4vax"]
+
+[resource]
+atlas = ExtResource("1_j4vax")
+region = Rect2(16, 0, 16, 16)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Assets/Cursor.gd" id="1_br6ly"]
+[ext_resource type="Texture2D" uid="uid://lbwknikep4va" path="res://Resourses/Atlases/Blocks/CursorR.tres" id="2_fo148"]
+
+[node name="Cursor" type="Control"]
+z_index = 12
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_br6ly")
+
+[node name="Squere" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_fo148")

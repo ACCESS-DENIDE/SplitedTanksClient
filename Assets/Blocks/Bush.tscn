@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cdvjeys83ol85" path="res://Resourses/Atlases/Blocks/Bush.tres" id="1_7x6wy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm3wx"]
+size = Vector2(16, 16)
+
+[node name="Bush" type="StaticBody2D"]
+z_index = 10
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wm3wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_7x6wy")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://droku07odhti1"]
+
+[ext_resource type="Texture2D" uid="uid://d2yimxl3fuf7y" path="res://Resourses/Atlases/Bulets/Bulet.tres" id="1_l6r2i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_um18v"]
+radius = 1.5
+height = 5.0
+
+[node name="Bulet" type="Area2D"]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_um18v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_l6r2i")

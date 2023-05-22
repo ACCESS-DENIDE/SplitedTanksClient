@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://do2q380lyeebs" path="res://Resourses/Atlases/Blocks/Brick3.tres" id="1_v2oxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm3wx"]
+size = Vector2(16, 16)
+
+[node name="BrickStage3" type="StaticBody2D"]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wm3wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_v2oxh")

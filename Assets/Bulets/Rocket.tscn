@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://j35xpllnt2q7"]
+
+[ext_resource type="Texture2D" uid="uid://oh3ltcer2fbn" path="res://Resourses/Atlases/Bulets/Rocket.tres" id="1_renws"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_um18v"]
+radius = 0.6
+height = 4.8
+
+[node name="Artillery" type="Area2D"]
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_um18v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_renws")
