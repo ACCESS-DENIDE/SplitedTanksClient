@@ -29,3 +29,4 @@ func _load_data(data):
 		-1:
 			$PowerUp.frame=8
 	
+	
