@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://bo132ndk4m3ai"]
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://bo132ndk4m3ai"]
 
 [ext_resource type="Texture2D" uid="uid://yhdgsdixp2vy" path="res://Resourses/Textures/pickups.png" id="1_qtbx4"]
 [ext_resource type="Texture2D" uid="uid://xg8pffjabp5p" path="res://Resourses/Textures/Blocks.png" id="2_3ge64"]
@@ -35,6 +35,10 @@ region = Rect2(96, 0, 16, 16)
 atlas = ExtResource("1_qtbx4")
 region = Rect2(144, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5anx"]
+atlas = ExtResource("1_qtbx4")
+region = Rect2(112, 0, 16, 16)
+
 [resource]
 resource_local_to_scene = true
 animations = [{
@@ -65,6 +69,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5anx")
 }],
 "loop": false,
 "name": &"Base",

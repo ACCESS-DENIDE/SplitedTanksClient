@@ -26,7 +26,17 @@ func _load_data(data):
 			$PowerUp.frame=5
 		25:
 			$PowerUp.frame=2
+		31:
+			$PowerUp.frame=9
 		-1:
 			$PowerUp.frame=8
-	
-	
+	var BL:ItemList=$MyBlocks
+	BL.clear()
+	for i in data["Blocks"].keys():
+		
+		BL.add_item(i+" ("+str(data["Blocks"][i])+")")
+		
+
+
+func _on_my_blocks_item_selected(index):
+	Server.stored_meta=index

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://ic4w07vk0ac7"]
 
 [ext_resource type="Script" path="res://Assets/Cursor.gd" id="1_br6ly"]
 [ext_resource type="Texture2D" uid="uid://lbwknikep4va" path="res://Resourses/Atlases/Blocks/CursorR.tres" id="2_fo148"]

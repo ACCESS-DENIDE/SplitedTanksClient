@@ -6,6 +6,8 @@ var response_Label=null
 
 var connected:bool
 
+var meta_request:bool
+var stored_meta:int=-1
 func _ready():
 	multiplayer.connected_to_server.connect(_connected)
 	multiplayer.server_disconnected.connect(_disconected)
@@ -176,6 +178,10 @@ func _client_spawn(id:int, name:String, pos:Vector2, rot:float=0.0):
 			instance=preload("res://Assets/Effects/Mafia.tscn")
 			size=1
 			pass
+		31:
+			instance=preload("res://Assets/Items/RandomBlock.tscn")
+			
+			pass
 	var new_obj=instance.instantiate()
 	new_obj.name=name
 	new_obj.position=pos
@@ -184,13 +190,19 @@ func _client_spawn(id:int, name:String, pos:Vector2, rot:float=0.0):
 	new_obj.scale.y=size
 	NodeManager.GameplayNode.add_child(new_obj)
 
-func _set_bloc(x:int, y:int, sender:Node):
-	NodeManager.UInode.remove_child(sender)
-	rpc_id(1, "_target_send", x, y)
+func _set_bloc(x:int, y:int, sender:Node, meta:int=-1):
+	if(!meta_request):
+		NodeManager.UInode.remove_child(sender)
+		rpc_id(1, "_target_send", x, y, meta)
+	else:
+		if(stored_meta!=-1):
+			NodeManager.UInode.remove_child(sender)
+			rpc_id(1, "_target_send", x, y, stored_meta)
 
 @rpc("any_peer")
-func _target_req():
+func _target_req(need_meta:bool):
 	NodeManager._targeting()
+	meta_request=need_meta
 	pass
 
 @rpc("any_peer")
@@ -209,6 +221,10 @@ func  _changeBlock(name:String, type:int, new_name:String):
 			NodeManager.GameplayNode.remove_child(i)
 			if(type>0):
 				_client_spawn(type, new_name, pos)
+
+func _build_mode():
+	if(connected):
+		rpc_id(1, "_build_pressed")
 
 func _pew():
 	if(connected):
@@ -235,6 +251,8 @@ func _setName(name:String):
 	pass
 
 @rpc("any_peer")
-func _target_send(x:int, y:int):
+func _target_send(x:int, y:int, meta:int=-1):
 	pass
-
+@rpc("any_peer")
+func _build_pressed():
+	pass

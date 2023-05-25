@@ -8,6 +8,8 @@ func _input(event):
 		Server._pew()
 	if(Input.is_action_just_pressed("my_ability")):
 		Server._PU_use()
+	if(Input.is_action_just_pressed("my_build")):
+		Server._build_mode()
 
 func _process(delta):
 	if (Input.is_action_just_pressed("my_move_up")):

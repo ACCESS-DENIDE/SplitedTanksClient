@@ -29,3 +29,4 @@
 28-OmenCanon
 29-Bunker Buster
 30-Mafia
+31-random block
