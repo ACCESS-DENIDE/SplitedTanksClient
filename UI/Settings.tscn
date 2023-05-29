@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2caaeipabqm4"]
+
+[ext_resource type="Script" path="res://UI/Settings.gd" id="1_5wrn6"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5wrn6")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -132.0
+offset_right = 216.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="ControlLabe" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Control Mode:"
+
+[node name="SelectingControls" type="ItemList" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+item_count = 3
+item_0/text = "Mouse"
+item_1/text = "Keys"
+item_2/text = "Both"
+
+[node name="ResolutionLabe" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Resolution:"
+
+[node name="Resolution" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="XRes" type="TextEdit" parent="GridContainer/Resolution"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1920"
+
+[node name="YRes" type="TextEdit" parent="GridContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1080"
+
+[node name="Random" type="Button" parent="GridContainer/Resolution"]
+layout_mode = 2
+text = "Random"
+
+[node name="set" type="Button" parent="GridContainer/Resolution"]
+layout_mode = 2
+text = "Set
+"
+
+[node name="WindowType" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Mode"
+
+[node name="Window typeSelect" type="ItemList" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 4
+item_0/text = "Borderless"
+item_1/text = "Fullscreen"
+item_2/text = "FullScreenExclusive"
+item_3/text = "Windowed"
+
+[node name="Buttons" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Back" type="Button" parent="GridContainer/Buttons"]
+layout_mode = 2
+text = "Back"
+
+[node name="Audio" type="Button" parent="GridContainer/Buttons"]
+layout_mode = 2
+text = "AudioPanel"
+
+[node name="Bindings" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Keyboard Controls"
+
+[connection signal="item_selected" from="GridContainer/SelectingControls" to="." method="_on_selecting_controls_item_selected"]
+[connection signal="pressed" from="GridContainer/Resolution/Random" to="." method="_on_random_pressed"]
+[connection signal="pressed" from="GridContainer/Resolution/set" to="." method="_on_set_pressed"]
+[connection signal="item_selected" from="GridContainer/Window typeSelect" to="." method="_on_window_type_select_item_selected"]
+[connection signal="pressed" from="GridContainer/Buttons/Back" to="." method="_on_back_pressed"]

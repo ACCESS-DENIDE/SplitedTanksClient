@@ -10,3 +10,8 @@ func _on_quit_pressed():
 
 func _on_map_editor_pressed():
 	NodeManager._mapEdior()
+
+
+func _on_settings_pressed():
+	NodeManager._settings()
+	pass # Replace with function body.

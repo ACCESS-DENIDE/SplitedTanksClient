@@ -11,11 +11,13 @@ var Main=preload("res://UI/main_menu.tscn")
 var Cam=preload("res://UI/InGameCamera.tscn")
 var Curs=preload("res://Assets/Cursor.tscn")
 var EditorUI=preload("res://UI/MapEditorUI.tscn")
+var Settings=preload("res://UI/Settings.tscn")
 
 var amounts={}
 var Special:int
 
 func _ready():
+	_load_settings()
 	_main_menu()
 
 func _main_menu():
@@ -37,6 +39,11 @@ func _connection_grid():
 	pass
 
 func _settings():
+	for i in UInode.get_children():
+		i.queue_free()
+	for i in GameplayNode.get_children():
+		i.queue_free()
+	UInode.add_child(Settings.instantiate())
 	pass
 
 func _game():
@@ -69,3 +76,28 @@ func _set_locals(data={}):
 	if(redir!=null):
 		redir._load_data(data)
 	
+
+
+func _save_settings():
+	var set={}
+	set["res"]=get_window().size
+	set["displayMode"]=get_window().mode
+	set["useMouse"]=GetInput.use_mouse
+	set["useKeys"]=GetInput.use_keys
+	var Saver=FileAccess.open("Settings.json", FileAccess.WRITE)
+	Saver.store_string(JSON.stringify(set))
+	Saver.close()
+
+
+func _load_settings():
+	if(FileAccess.file_exists("Settings.json")):
+		var set={}
+		var loader=FileAccess.open("Settings.json", FileAccess.READ)
+		set=JSON.parse_string(loader.get_as_text())
+		loader.close()
+		var res_str=set["res"].left(-1)
+		res_str=res_str.right(-1)
+		get_window().size=Vector2(int(res_str.split(",")[0]),int(res_str.split(",")[1]) )
+		get_window().mode=set["displayMode"]
+		GetInput.use_mouse=set["useMouse"]
+		GetInput.use_keys=set["useKeys"]

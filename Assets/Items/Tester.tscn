@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://drwmok1uqwaq4"]
+
+[ext_resource type="Texture2D" uid="uid://y77gignjk1vx" path="res://icon.png" id="1_30qpu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cegnp"]
+radius = 8.0
+
+[node name="Shield" type="Area2D"]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cegnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_30qpu")

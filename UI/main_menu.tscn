@@ -42,5 +42,6 @@ layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="Container/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Container/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Container/MapEditor" to="." method="_on_map_editor_pressed"]
 [connection signal="pressed" from="Container/Quit" to="." method="_on_quit_pressed"]

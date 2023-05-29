@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg0svw3tud8xh"]
+[gd_scene load_steps=4 format=3 uid="uid://cg0svw3tud8xh"]
 
 [ext_resource type="SpriteFrames" uid="uid://c1abhh35ou3x5" path="res://Resourses/Animations/TankB_Anim.tres" id="1_73mnn"]
+[ext_resource type="Script" path="res://Assets/PlayebaleTanks/StateManager.gd" id="1_jpwrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4je0"]
 size = Vector2(13.2, 16)
 
 [node name="TankB" type="CharacterBody2D"]
 scale = Vector2(5, 5)
+script = ExtResource("1_jpwrl")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -15,5 +17,4 @@ animation = &"Move"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(4.76837e-07, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k4je0")

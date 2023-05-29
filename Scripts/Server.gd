@@ -29,7 +29,7 @@ func _connected():
 	connected=true
 	if(response_Label!=null):
 		response_Label.text="connected"
-	#rpc_id(1, "_setName", name_pl)
+	rpc_id(1, "_setName", name_pl)
 	NodeManager._game()
 	pass
 
@@ -61,6 +61,7 @@ func _unload_map_cli():
 	for i in NodeManager.GameplayNode.get_children():
 		if(i.name.contains("Block")):
 			NodeManager.GameplayNode.remove_child(i)
+			i.queue_free()
 	pass
 
 @rpc("unreliable","any_peer")
@@ -74,6 +75,13 @@ func _sync(name:String, pos:Vector2, rot:float):
 func _update_locals(data={}):
 	NodeManager._set_locals(data)
 	pass
+
+
+@rpc("any_peer")
+func _get_state(peer_name:String, state:int):
+	for i in NodeManager.GameplayNode.get_children():
+		if (i.name==peer_name):
+			i._change_state(state)
 
 
 @rpc("any_peer")
@@ -180,7 +188,48 @@ func _client_spawn(id:int, name:String, pos:Vector2, rot:float=0.0):
 			pass
 		31:
 			instance=preload("res://Assets/Items/RandomBlock.tscn")
-			
+			pass
+		32:
+			instance=preload("res://Assets/Items/Sprinkler.tscn")
+			pass
+		33:
+			instance=preload("res://Assets/Items/TankTrap.tscn")
+			pass
+		34:
+			instance=preload("res://Assets/Items/Portal.tscn")
+			pass
+		35:
+			instance=preload("res://Assets/Items/Invicible.tscn")
+			pass
+		36:
+			instance=preload("res://Assets/Items/NoU.tscn")
+			pass
+		37:
+			instance=preload("res://Assets/Items/Jetpack.tscn")
+			pass
+		38:
+			instance=preload("res://Assets/Items/ScoreSucker.tscn")
+			pass
+		39:
+			instance=preload("res://Assets/Items/Slower.tscn")
+			pass
+		40:
+			instance=preload("res://Assets/Items/4X.tscn")
+			pass
+		41:
+			instance=preload("res://Assets/Items/RBG.tscn")
+			pass
+		42:
+			instance=preload("res://Assets/Items/DFF.tscn")
+			pass
+		43:
+			instance=preload("res://Assets/Items/Fortnite.tscn")
+			pass
+		44:
+			instance=preload("res://Assets/Effects/NotifyExplode.tscn")
+			pass
+		45:
+			instance=preload("res://Assets/Items/Tester.tscn")
 			pass
 	var new_obj=instance.instantiate()
 	new_obj.name=name
@@ -193,10 +242,12 @@ func _client_spawn(id:int, name:String, pos:Vector2, rot:float=0.0):
 func _set_bloc(x:int, y:int, sender:Node, meta:int=-1):
 	if(!meta_request):
 		NodeManager.UInode.remove_child(sender)
+		sender.queue_free()
 		rpc_id(1, "_target_send", x, y, meta)
 	else:
 		if(stored_meta!=-1):
 			NodeManager.UInode.remove_child(sender)
+			sender.queue_free()
 			rpc_id(1, "_target_send", x, y, stored_meta)
 
 @rpc("any_peer")
@@ -207,18 +258,18 @@ func _target_req(need_meta:bool):
 
 @rpc("any_peer")
 func _client_despawn(name:String):
-	print(name)
 	for i in NodeManager.GameplayNode.get_children():
 		if i.name==name:
 			NodeManager.GameplayNode.remove_child(i)
+			i.queue_free()
 
 @rpc("any_peer")
 func  _changeBlock(name:String, type:int, new_name:String):
-	print(name)
 	for i in NodeManager.GameplayNode.get_children():
 		if(i.name==name):
 			var pos=i.position
 			NodeManager.GameplayNode.remove_child(i)
+			i.queue_free()
 			if(type>0):
 				_client_spawn(type, new_name, pos)
 

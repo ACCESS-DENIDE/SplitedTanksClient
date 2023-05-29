@@ -13,6 +13,7 @@ func _process(delta):
 
 func _on_video_stream_player_finished():
 	get_parent().remove_child(self)
+	queue_free()
 	pass # Replace with function body.
 
 

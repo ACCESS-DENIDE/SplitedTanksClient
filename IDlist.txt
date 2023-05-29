@@ -30,3 +30,17 @@
 29-Bunker Buster
 30-Mafia
 31-random block
+32-Sprinkler
+33-TankTrap
+34-portal
+35-Invicible
+36-NoU
+37-Jetpack
+38-ScoreSucker
+39-Slower
+40-4X
+41-RBG
+42-DFF
+43-Fortnite
+44-NotifyedExp
+45-Fazbear

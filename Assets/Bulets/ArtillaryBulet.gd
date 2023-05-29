@@ -23,3 +23,4 @@ func _process(delta):
 
 func _on_lifetime_timeout():
 	get_parent().remove_child(self)
+	queue_free()

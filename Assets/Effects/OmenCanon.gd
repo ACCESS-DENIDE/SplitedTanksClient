@@ -21,4 +21,5 @@ func _on_animation_finished():
 			pass
 		3:
 			get_parent().remove_child(self)
+			queue_free()
 			pass
