@@ -249,7 +249,7 @@ func _client_spawn(id:int, name:String, pos:Vector2, rot:float=0.0):
 			instance=preload("res://Assets/GameplayObj/point_yellow.tscn")
 			pass
 		50:
-			instance=preload("res://Assets/Items/Tester.tscn")
+			instance=preload("res://Assets/GameplayObj/point_neutral.tscn")
 			pass
 	var new_obj=instance.instantiate()
 	new_obj.name=name
