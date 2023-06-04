@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba5ul8unnood3"]
+
+[ext_resource type="SpriteFrames" uid="uid://drh5574vnq1s5" path="res://Resourses/Animations/Jet.tres" id="1_3vure"]
+[ext_resource type="Script" path="res://Assets/Effects/Explode.gd" id="2_jaigi"]
+
+[node name="Jet" type="AnimatedSprite2D"]
+z_index = -1
+texture_filter = 1
+sprite_frames = ExtResource("1_3vure")
+animation = &"Explode"
+script = ExtResource("2_jaigi")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

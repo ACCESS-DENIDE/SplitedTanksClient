@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://c263njwxpwo64"]
 
 [ext_resource type="Texture2D" uid="uid://bd2uitq1ca5l5" path="res://Resourses/Atlases/Blocks/Brick2.tres" id="1_kekrb"]
 
@@ -6,6 +6,7 @@
 size = Vector2(16, 16)
 
 [node name="BrickStage2" type="StaticBody2D"]
+z_index = -1
 scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -76,6 +76,11 @@ func _update_locals(data={}):
 	NodeManager._set_locals(data)
 	pass
 
+@rpc("any_peer")
+func _set_player_visib(name:String, switch:bool):
+	for i in NodeManager.GameplayNode.get_children():
+		if(i.name==name):
+			i.visible=switch
 
 @rpc("any_peer")
 func _get_state(peer_name:String, state:int):

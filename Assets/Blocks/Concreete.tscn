@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://ck36cer5u4hqd"]
 
 [ext_resource type="Texture2D" uid="uid://delyevvrodeok" path="res://Resourses/Atlases/Blocks/Concreet.tres" id="1_sh2el"]
 
@@ -6,6 +6,7 @@
 size = Vector2(16, 16)
 
 [node name="Concreete" type="StaticBody2D"]
+z_index = -1
 scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
