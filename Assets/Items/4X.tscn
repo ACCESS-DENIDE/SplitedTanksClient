@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://oqqo6o2hm2fu"]
-
-[ext_resource type="Texture2D" uid="uid://cue2qf47q23xl" path="res://Resourses/Atlases/Items/4X.tres" id="1_6afh7"]
+[gd_scene load_steps=2 format=3 uid="uid://oqqo6o2hm2fu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cegnp"]
 radius = 8.0
@@ -13,4 +11,3 @@ shape = SubResource("CircleShape2D_cegnp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_6afh7")

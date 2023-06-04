@@ -44,3 +44,15 @@
 43-Fortnite
 44-NotifyedExp
 45-Fazbear
+46-pointRed
+47-pointGreen
+48-pointBlue
+49-pointYellow
+50-PointNeutral
+51-flagRed
+52-flagGreen
+53-flagBlue
+54-flagYellow
+55-flagNeutral
+56-boss
+57-hohlyonok

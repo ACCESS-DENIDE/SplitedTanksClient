@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnepb4wrfe16h"]
+
+[ext_resource type="Texture2D" uid="uid://b2hu6kec4qtaf" path="res://Resourses/Atlases/GameplayObj/point_yellow.tres" id="1_7wgam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kf62y"]
+radius = 8.0
+
+[node name="point_red" type="Area2D"]
+z_index = 20
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kf62y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 20
+texture = ExtResource("1_7wgam")
