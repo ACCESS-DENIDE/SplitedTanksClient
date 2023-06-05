@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://df7c00g04qeim"]
+
+[ext_resource type="Script" path="res://Assets/PlayebaleTanks/StateManager.gd" id="1_eusaj"]
+[ext_resource type="SpriteFrames" uid="uid://dhryqud0nbo7h" path="res://Resourses/Animations/Boss.tres" id="2_t8hcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4je0"]
+size = Vector2(30, 32)
+
+[node name="Boss" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_eusaj")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("2_t8hcb")
+animation = &"Move"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_k4je0")

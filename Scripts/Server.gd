@@ -251,6 +251,9 @@ func _client_spawn(id:int, name:String, pos:Vector2, rot:float=0.0):
 		50:
 			instance=preload("res://Assets/GameplayObj/point_neutral.tscn")
 			pass
+		56:
+			instance=preload("res://Assets/PlayebaleTanks/Boss.tscn")
+			pass
 	var new_obj=instance.instantiate()
 	new_obj.name=name
 	new_obj.position=pos
@@ -290,7 +293,7 @@ func  _changeBlock(name:String, type:int, new_name:String):
 			var pos=i.position
 			NodeManager.GameplayNode.remove_child(i)
 			i.queue_free()
-			if(type>0):
+			if(type>-1):
 				_client_spawn(type, new_name, pos)
 
 func _build_mode():

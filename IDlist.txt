@@ -1,3 +1,4 @@
+-1-Delete
 0-Red Tank
 1-Green Tank
 2-Blue Tank

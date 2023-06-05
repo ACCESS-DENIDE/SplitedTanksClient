@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dhryqud0nbo7h"]
+
+[ext_resource type="Texture2D" uid="uid://dh16qdkr5opet" path="res://Resourses/Textures/PETATANK.png" id="1_7xonu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxjqt"]
+atlas = ExtResource("1_7xonu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h846u"]
+atlas = ExtResource("1_7xonu")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxjqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h846u")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 2.5
+}]
