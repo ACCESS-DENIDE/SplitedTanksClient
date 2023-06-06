@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm48svn6vo7yg"]
+
+[ext_resource type="Texture2D" uid="uid://70it7bf5852e" path="res://Resourses/Atlases/GameplayObj/flag_blue.tres" id="1_05857"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kf62y"]
+radius = 8.0
+
+[node name="flag_blue" type="Area2D"]
+z_index = 20
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kf62y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_05857")

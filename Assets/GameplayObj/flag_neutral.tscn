@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6pnj8e67gyc4"]
+
+[ext_resource type="Texture2D" uid="uid://dufguwptk2hid" path="res://Resourses/Atlases/GameplayObj/flag_neutral.tres" id="1_isruo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kf62y"]
+radius = 8.0
+
+[node name="flag_neutral" type="Area2D"]
+z_index = 20
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kf62y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_isruo")

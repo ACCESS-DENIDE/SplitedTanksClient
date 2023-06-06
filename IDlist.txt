@@ -57,3 +57,4 @@
 55-flagNeutral
 56-boss
 57-hohlyonok
+58-Star
