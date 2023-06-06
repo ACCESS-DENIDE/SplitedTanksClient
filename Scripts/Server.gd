@@ -269,6 +269,9 @@ func _client_spawn(id:int, name:String, pos:Vector2, rot:float=0.0):
 		56:
 			instance=preload("res://Assets/PlayebaleTanks/Boss.tscn")
 			pass
+		57:
+			instance=preload("res://Assets/GameplayObj/Hohlyonok.tscn")
+			pass
 		58:
 			instance=preload("res://Assets/GameplayObj/Star.tscn")
 			pass
@@ -290,6 +293,9 @@ func _set_bloc(x:int, y:int, sender:Node, meta:int=-1):
 			NodeManager.UInode.remove_child(sender)
 			sender.queue_free()
 			rpc_id(1, "_target_send", x, y, stored_meta)
+
+func _buyItem(Num:int):
+	rpc_id(1, "_shopOrder", Num)
 
 @rpc("any_peer")
 func _target_req(need_meta:bool):
@@ -347,4 +353,8 @@ func _target_send(x:int, y:int, meta:int=-1):
 	pass
 @rpc("any_peer")
 func _build_pressed():
+	pass
+
+@rpc("any_peer")
+func _shopOrder(id:int):
 	pass

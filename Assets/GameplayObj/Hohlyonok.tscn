@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhhas8to13x1q"]
+
+[ext_resource type="Texture2D" uid="uid://b37nb2e0klirq" path="res://Resourses/Atlases/GameplayObj/Hohlyonok.tres" id="1_mhxo5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kf62y"]
+radius = 9.10824
+
+[node name="flag_blue" type="StaticBody2D"]
+z_index = 20
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kf62y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.5)
+texture = ExtResource("1_mhxo5")

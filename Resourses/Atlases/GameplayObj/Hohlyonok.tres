@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b37nb2e0klirq"]
+
+[ext_resource type="Texture2D" uid="uid://cmrhjugww4h5p" path="res://Resourses/Textures/Hohlyonok.png" id="1_0nc5j"]
+
+[resource]
+atlas = ExtResource("1_0nc5j")
+region = Rect2(0, 0, 16, 16)

@@ -67,7 +67,36 @@ func _load_data(data):
 		score_list.clear()
 		for i in data["Scores"].keys():
 			score_list.add_item(i+" ("+str(data["Scores"][i])+")")
+	if(data.has("ShopDeals")):
+		for i in range(0, 3):
+			match i:
+				0:
+					$GridContainer/Shop1.text=str(data["ShopDeals"].keys()[i])+ ":"+str(data["ShopDeals"].values()[i])
+					pass
+				1:
+					$GridContainer/Shop2.text=str(data["ShopDeals"].keys()[i])+ ":"+str(data["ShopDeals"].values()[i])
+					pass
+				2:
+					$GridContainer/Shop3.text=str(data["ShopDeals"].keys()[i])+ ":"+str(data["ShopDeals"].values()[i])
+					pass
+					
+			
 
 
 func _on_my_blocks_item_selected(index):
 	Server.stored_meta=index
+
+
+func _on_buy_1_pressed():
+	Server._buyItem(0)
+	pass # Replace with function body.
+
+
+func _on_buy_2_pressed():
+	Server._buyItem(1)
+	pass # Replace with function body.
+
+
+func _on_buy_3_pressed():
+	Server._buyItem(2)
+	pass # Replace with function body.
