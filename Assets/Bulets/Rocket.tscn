@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://j35xpllnt2q7"]
+[gd_scene load_steps=5 format=3 uid="uid://j35xpllnt2q7"]
 
+[ext_resource type="Script" path="res://Assets/Bulets/Rocket.gd" id="1_i7s8r"]
 [ext_resource type="Texture2D" uid="uid://oh3ltcer2fbn" path="res://Resourses/Atlases/Bulets/Rocket.tres" id="1_renws"]
+[ext_resource type="AudioStream" uid="uid://bianihs2n3b8t" path="res://Resourses/RawAudio/Rocket.wav" id="3_sri6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_um18v"]
 radius = 0.6
@@ -8,6 +10,7 @@ height = 4.8
 
 [node name="Artillery" type="Area2D"]
 scale = Vector2(10, 10)
+script = ExtResource("1_i7s8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_um18v")
@@ -16,3 +19,6 @@ shape = SubResource("CapsuleShape2D_um18v")
 texture_filter = 1
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_renws")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sri6e")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbkwijtnl8iuc"]
+[gd_scene load_steps=3 format=3 uid="uid://bbkwijtnl8iuc"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_d0vs7"]
+[ext_resource type="AudioStream" uid="uid://dhri0p50r0tkh" path="res://Resourses/RawAudio/blipSelect.wav" id="2_4l7wb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -40,6 +41,11 @@ text = " Map Editor "
 [node name="Quit" type="Button" parent="Container"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Container"]
+stream = ExtResource("2_4l7wb")
+autoplay = true
+bus = &"Effects"
 
 [connection signal="pressed" from="Container/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Container/Settings" to="." method="_on_settings_pressed"]

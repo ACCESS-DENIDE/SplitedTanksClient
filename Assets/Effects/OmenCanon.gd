@@ -18,6 +18,7 @@ func _on_animation_finished():
 			$".".play("Engage")
 			$LaserEnlarger.visible=true
 			$LaserEnlarger.play("Enlarged")
+			$AudioStreamPlayer.play()
 			pass
 		3:
 			get_parent().remove_child(self)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://o72qsprs6js2"]
+[gd_scene load_steps=12 format=3 uid="uid://o72qsprs6js2"]
 
 [ext_resource type="Script" path="res://UI/MapEditorUI.gd" id="1_lxiqv"]
 [ext_resource type="Texture2D" uid="uid://delyevvrodeok" path="res://Resourses/Atlases/Blocks/Concreet.tres" id="2_jpwan"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://do2q380lyeebs" path="res://Resourses/Atlases/Blocks/Brick3.tres" id="8_o2jpg"]
 [ext_resource type="Texture2D" uid="uid://df5l6iyatviai" path="res://Resourses/Atlases/Blocks/Base.tres" id="9_2sige"]
 [ext_resource type="Texture2D" uid="uid://lbwknikep4va" path="res://Resourses/Atlases/Blocks/CursorR.tres" id="10_tpyl0"]
+[ext_resource type="AudioStream" uid="uid://dhri0p50r0tkh" path="res://Resourses/RawAudio/blipSelect.wav" id="11_dn6cu"]
 
 [node name="MapEditorUI" type="Control"]
 layout_mode = 3
@@ -88,6 +89,11 @@ text = "Undo"
 layout_mode = 2
 focus_mode = 0
 text = "Main Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Grid"]
+stream = ExtResource("11_dn6cu")
+autoplay = true
+bus = &"Effects"
 
 [connection signal="pressed" from="Grid/SaveLoader/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Grid/SaveLoader/Save" to="." method="_on_save_pressed"]

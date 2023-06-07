@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbgis47qdwsxu"]
+[gd_scene load_steps=4 format=3 uid="uid://dbgis47qdwsxu"]
 
 [ext_resource type="SpriteFrames" uid="uid://bmkrykmhxcybt" path="res://Resourses/Animations/Explode.tres" id="1_xyq5p"]
 [ext_resource type="Script" path="res://Assets/Effects/Explode.gd" id="2_uccg0"]
+[ext_resource type="AudioStream" uid="uid://cndyq15ix0yml" path="res://Resourses/RawAudio/OmenStrike.wav" id="3_1tseb"]
 
 [node name="miniExplode" type="AnimatedSprite2D"]
 z_index = 15
@@ -12,5 +13,10 @@ animation = &"Explode"
 frame = 8
 frame_progress = 1.0
 script = ExtResource("2_uccg0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1tseb")
+autoplay = true
+bus = &"Effects"
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

@@ -31,6 +31,8 @@ func _ready():
 		3:
 			$GridContainer/SelectingControls.select(2)
 			pass
+	
+	$GridContainer/HSlider.value=AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Effects"))+48
 	pass # Replace with function body.
 
 
@@ -111,4 +113,10 @@ func _on_window_type_select_item_selected(index):
 		3:
 			get_window().mode=Window.MODE_WINDOWED
 			pass
+	pass # Replace with function body.
+
+
+func _on_h_slider_drag_ended(value_changed):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Effects"), $GridContainer/HSlider.value-48)
+	$AudioStreamPlayer.play()
 	pass # Replace with function body.

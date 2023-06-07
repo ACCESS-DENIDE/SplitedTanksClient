@@ -6,13 +6,19 @@ var my_shield=null
 var jet_inst=preload("res://Assets/Effects/Jet.tscn")
 var my_jet=null
 
+var flg=false
+
+
+
 func _change_state(state:int):
 	match state:
 		0:
 			$Animation.play("Move")
+			flg=true
 			pass
 		1:
 			$Animation.stop()
+			flg=false
 			pass
 		2:
 			if(my_shield==null):
@@ -36,3 +42,10 @@ func _change_state(state:int):
 				remove_child(my_jet)
 				my_jet.queue_free()
 				my_jet=null
+
+
+func _process(delta):
+	if(flg):
+		$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.stop()

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cikid8ao4npc4"]
+[gd_scene load_steps=5 format=3 uid="uid://cikid8ao4npc4"]
 
 [ext_resource type="Script" path="res://UI/InGameUI.gd" id="1_kaqow"]
+[ext_resource type="AudioStream" uid="uid://dhri0p50r0tkh" path="res://Resourses/RawAudio/blipSelect.wav" id="3_7d76t"]
+[ext_resource type="AudioStream" uid="uid://divoo76c7u804" path="res://Resourses/RawAudio/powerUp.wav" id="4_ce2so"]
 [ext_resource type="SpriteFrames" uid="uid://bo132ndk4m3ai" path="res://Resourses/Animations/Items.tres" id="7_xdj4v"]
 
 [node name="InGameUI" type="Control"]
@@ -109,6 +111,14 @@ vertical_alignment = 1
 [node name="Buy3" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "     Buy       "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7d76t")
+autoplay = true
+bus = &"Effects"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ce2so")
 
 [connection signal="item_selected" from="MyBlocks" to="." method="_on_my_blocks_item_selected"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

@@ -84,6 +84,7 @@ func _save_settings():
 	set["displayMode"]=get_window().mode
 	set["useMouse"]=GetInput.use_mouse
 	set["useKeys"]=GetInput.use_keys
+	set["Volume"]=AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Effects"))
 	var Saver=FileAccess.open("Settings.json", FileAccess.WRITE)
 	Saver.store_string(JSON.stringify(set))
 	Saver.close()
@@ -101,3 +102,4 @@ func _load_settings():
 		get_window().mode=set["displayMode"]
 		GetInput.use_mouse=set["useMouse"]
 		GetInput.use_keys=set["useKeys"]
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Effects"),set["Volume"])

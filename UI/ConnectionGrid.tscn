@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://df5oquuwdyapj"]
+[gd_scene load_steps=3 format=3 uid="uid://df5oquuwdyapj"]
 
 [ext_resource type="Script" path="res://UI/ConnectionGrid.gd" id="1_matcl"]
+[ext_resource type="AudioStream" uid="uid://dhri0p50r0tkh" path="res://Resourses/RawAudio/blipSelect.wav" id="2_lfl2p"]
 
 [node name="ConnectionGrid" type="Control"]
 layout_mode = 3
@@ -78,6 +79,11 @@ text = "Back"
 [node name="Connect" type="Button" parent="Container"]
 layout_mode = 2
 text = "Connect"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lfl2p")
+autoplay = true
+bus = &"Effects"
 
 [connection signal="pressed" from="Container/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Container/Connect" to="." method="_on_connect_pressed"]

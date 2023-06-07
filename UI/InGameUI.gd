@@ -10,6 +10,7 @@ func _on_menu_pressed():
 
 func _load_data(data):
 	if data.has("Powerup"):
+		$AudioStreamPlayer2.play()
 		match data["Powerup"]:
 			18:
 				$PowerUp.frame=6

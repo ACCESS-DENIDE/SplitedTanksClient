@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2caaeipabqm4"]
+[gd_scene load_steps=3 format=3 uid="uid://c2caaeipabqm4"]
 
 [ext_resource type="Script" path="res://UI/Settings.gd" id="1_5wrn6"]
+[ext_resource type="AudioStream" uid="uid://dhri0p50r0tkh" path="res://Resourses/RawAudio/blipSelect.wav" id="2_bogj3"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -97,8 +98,21 @@ text = "AudioPanel"
 layout_mode = 2
 text = "Keyboard Controls"
 
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Effect volume:"
+
+[node name="HSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bogj3")
+autoplay = true
+bus = &"Effects"
+
 [connection signal="item_selected" from="GridContainer/SelectingControls" to="." method="_on_selecting_controls_item_selected"]
 [connection signal="pressed" from="GridContainer/Resolution/Random" to="." method="_on_random_pressed"]
 [connection signal="pressed" from="GridContainer/Resolution/set" to="." method="_on_set_pressed"]
 [connection signal="item_selected" from="GridContainer/Window typeSelect" to="." method="_on_window_type_select_item_selected"]
 [connection signal="pressed" from="GridContainer/Buttons/Back" to="." method="_on_back_pressed"]
+[connection signal="drag_ended" from="GridContainer/HSlider" to="." method="_on_h_slider_drag_ended"]
