@@ -119,6 +119,7 @@ bus = &"Effects"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ce2so")
+bus = &"Effects"
 
 [connection signal="item_selected" from="MyBlocks" to="." method="_on_my_blocks_item_selected"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

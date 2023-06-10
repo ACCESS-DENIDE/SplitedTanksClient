@@ -17,5 +17,6 @@ script = ExtResource("2_umotv")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_5acgm")
 autoplay = true
+bus = &"Effects"
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

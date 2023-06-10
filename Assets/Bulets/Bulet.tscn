@@ -21,3 +21,4 @@ texture = ExtResource("1_l6r2i")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3nma1")
 autoplay = true
+bus = &"Effects"

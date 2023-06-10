@@ -28,5 +28,6 @@ texture = ExtResource("2_vmpxu")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_dl30c")
 autoplay = true
+bus = &"Effects"
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
