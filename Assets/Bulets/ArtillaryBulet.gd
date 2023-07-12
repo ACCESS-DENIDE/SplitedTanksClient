@@ -7,8 +7,13 @@ func _ready():
 	str_dir=str_dir.left(str_dir.length()-1)
 	str_dir=str_dir.right(str_dir.length()-1)
 	dir=Vector2(int(str_dir.split(",")[0]),int(str_dir.split(",")[1]))
-	$Lifetime.wait_time=float(name.split("N")[1].replace("A", "."))
-	$Lifetime.start()
+	var wait_time=float(name.split("N")[1].replace("A", "."))
+	if(wait_time!=null):
+			if (wait_time>0 and wait_time<60):
+				$Lifetime.start(wait_time)
+			else:
+				$Lifetime.start(60)
+	
 	if(dir.x>0):
 		rotation=(atan(dir.x/dir.y))+3.14/2
 	else:

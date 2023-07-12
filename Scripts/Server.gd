@@ -6,6 +6,8 @@ var response_Label=null
 
 var connected:bool
 
+var plasma_FPS=1
+
 var meta_request:bool
 var stored_meta:int=-1
 func _ready():
@@ -319,6 +321,10 @@ func  _changeBlock(name:String, type:int, new_name:String):
 			i.queue_free()
 			if(type>-1):
 				_client_spawn(type, new_name, pos)
+
+@rpc("any_peer")
+func _set_plasma_time(time:float):
+	plasma_FPS=float(3)/time
 
 func _build_mode():
 	if(connected):
