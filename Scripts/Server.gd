@@ -78,6 +78,17 @@ func _update_locals(data={}):
 	NodeManager._set_locals(data)
 	pass
 
+
+
+@rpc("any_peer")
+func switch_fade(name:String, flag:bool):
+	for i in NodeManager.GameplayNode.get_children():
+		if(i.name==name):
+			if(flag):
+				i.fade()
+			else:
+				i.unfade()
+
 @rpc("any_peer")
 func _set_player_visib(name:String, switch:bool):
 	for i in NodeManager.GameplayNode.get_children():

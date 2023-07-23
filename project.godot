@@ -11,17 +11,21 @@ config_version=5
 [application]
 
 config/name="SplitedTanks"
-run/main_scene="res://placeholder.tscn"
+run/main_scene="res://Misc/placeholder.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-boot_splash/image="res://BD log.png"
+boot_splash/image="res://Resourses/Textures/BD log.png"
 boot_splash/use_filter=false
-config/icon="res://icon.png"
+config/icon="res://Resourses/Textures/icon.png"
 boot_splash/minimum_display_time=3000
+
+[audio]
+
+buses/default_bus_layout="res://Resourses/AudioBusses/default_bus_layout.tres"
 
 [autoload]
 
 Server="*res://Scripts/Server.gd"
-NodeManager="*res://node_manager.tscn"
+NodeManager="*res://Misc/node_manager.tscn"
 GetInput="*res://Assets/PlayebaleTanks/GetInput.gd"
 
 [display]

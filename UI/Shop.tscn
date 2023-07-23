@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsx62sxslh2fq"]
+
+[ext_resource type="Script" path="res://UI/Shop.gd" id="1_j4vol"]
+[ext_resource type="SpriteFrames" uid="uid://bo132ndk4m3ai" path="res://Resourses/Animations/Items.tres" id="2_vsc4j"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchor_left = 0.215
+anchor_top = -0.097
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -247.68
+offset_top = 62.856
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j4vol")
+
+[node name="Spacer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Item1" type="GridContainer" parent="Spacer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Spacer/Item1"]
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_vsc4j")
+animation = &"Base"
+frame = 7
+offset = Vector2(10, -10)
+
+[node name="Name" type="Label" parent="Spacer/Item1"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "ItemName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="Spacer/Item1"]
+layout_mode = 2
+text = "$$$$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buy" type="Button" parent="Spacer/Item1"]
+layout_mode = 2
+text = "Buy"
+
+[node name="Item2" type="GridContainer" parent="Spacer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Spacer/Item2"]
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_vsc4j")
+animation = &"Base"
+frame = 7
+offset = Vector2(10, -10)
+
+[node name="Name" type="Label" parent="Spacer/Item2"]
+layout_mode = 2
+text = "ItemName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="Spacer/Item2"]
+layout_mode = 2
+text = "$$$$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buy" type="Button" parent="Spacer/Item2"]
+layout_mode = 2
+text = "Buy"
+
+[node name="Item3" type="GridContainer" parent="Spacer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Spacer/Item3"]
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_vsc4j")
+animation = &"Base"
+frame = 7
+offset = Vector2(10, -10)
+
+[node name="Name" type="Label" parent="Spacer/Item3"]
+layout_mode = 2
+text = "ItemName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="Spacer/Item3"]
+layout_mode = 2
+text = "$$$$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buy" type="Button" parent="Spacer/Item3"]
+layout_mode = 2
+text = "Buy"
+
+[connection signal="pressed" from="Spacer/Item1/Buy" to="." method="_on_buy1_pressed"]
+[connection signal="pressed" from="Spacer/Item2/Buy" to="." method="_on_buy2_pressed"]
+[connection signal="pressed" from="Spacer/Item3/Buy" to="." method="_on_buy3_pressed"]

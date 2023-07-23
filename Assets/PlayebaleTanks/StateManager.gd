@@ -43,6 +43,14 @@ func _change_state(state:int):
 				my_jet.queue_free()
 				my_jet=null
 
+func fade():
+	$Animation.modulate.a=0.5
+	pass
+
+func unfade():
+	$Animation.modulate.a=1
+	pass
+
 
 func _process(delta):
 	if(flg):

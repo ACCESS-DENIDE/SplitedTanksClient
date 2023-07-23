@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1pr0fev3wlqr"]
+
+[ext_resource type="Script" path="res://Misc/placeholder.gd" id="1_wetlp"]
+
+[node name="Placeholder" type="Node"]
+script = ExtResource("1_wetlp")

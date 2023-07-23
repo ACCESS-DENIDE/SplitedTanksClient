@@ -70,17 +70,7 @@ func _load_data(data):
 			score_list.add_item(i+" ("+str(data["Scores"][i])+")")
 	if(data.has("ShopDeals")):
 		for i in range(0, 3):
-			match i:
-				0:
-					$GridContainer/Shop1.text=str(data["ShopDeals"].keys()[i])+ ":"+str(data["ShopDeals"].values()[i])
-					pass
-				1:
-					$GridContainer/Shop2.text=str(data["ShopDeals"].keys()[i])+ ":"+str(data["ShopDeals"].values()[i])
-					pass
-				2:
-					$GridContainer/Shop3.text=str(data["ShopDeals"].keys()[i])+ ":"+str(data["ShopDeals"].values()[i])
-					pass
-					
+			$Control._set_item(i, String(data["ShopDeals"].values()[i]+":"+str(data["ShopDeals"].keys()[i])))
 			
 
 
